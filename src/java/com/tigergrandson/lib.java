@@ -25,8 +25,8 @@ import javax.sql.DataSource;
  */
 public class lib {
 
-    public static String SQL_Path = "c:\\javaApp\\smbws\\sql\\";
-    public static String App_Path = "c:\\javaApp\\smbws\\";
+    public static String SQL_Path = "c:\\javaApp\\smb214-JAX-WS\\sql\\";
+    public static String App_Path = "c:\\javaApp\\smb214-JAX-WS\\";
     public static String log_file = "smbws.log";
 
     public static String ReadSelect(String FileName, String... Var) {
