@@ -74,4 +74,48 @@ public class smbws {
             return Exams;
         } 
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getStudentClassCourse")
+    public List<String> getStudentClassCourse(@WebParam(name = "student_id") String student_id) {
+       List<String> courses = new ArrayList<String>();
+        try {
+            String query = com.tigergrandson.lib.ReadSelect("getStudentClassCourse", student_id);
+            ResultSet rs = com.tigergrandson.lib.exeSelect(query);
+            while (rs.next()) {
+                Double note_max = Double.parseDouble(rs.getString("class_course_coefficient"));
+                note_max = note_max * 20;
+                courses.add(rs.getString("course_name")+" <b>("+String.valueOf(note_max)+")</b>");
+            }
+
+        } catch (SQLException ex) {
+            com.tigergrandson.lib.logToFile("error - " + ex.toString());
+        } finally {
+            return courses;
+        } 
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getStudentExamGrades")
+    public List<String> getStudentExamGrades(@WebParam(name = "student_id") String student_id, @WebParam(name = "exam_id") String exam_id) {
+       List<String> grades = new ArrayList<String>();
+        try {
+            String query = com.tigergrandson.lib.ReadSelect("getStudentExamGrades", student_id, exam_id);
+            ResultSet rs = com.tigergrandson.lib.exeSelect(query);
+            while (rs.next()) {
+                Double note = Double.parseDouble(rs.getString("grade_value")) * Double.parseDouble(rs.getString("class_course_coefficient"));
+                grades.add(String.valueOf(note));
+            }
+
+        } catch (SQLException ex) {
+            com.tigergrandson.lib.logToFile("error - " + ex.toString());
+        } finally {
+            return grades;
+        } 
+
+    }
 }
