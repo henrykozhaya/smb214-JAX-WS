@@ -1,0 +1,1 @@
+SELECT * FROM `smb`.`exam` WHERE `exam_school_year_id` = '{1}'

@@ -1,1 +1,1 @@
-SELECT * FROM `school_year`
+SELECT * FROM `smb`.`school_year`

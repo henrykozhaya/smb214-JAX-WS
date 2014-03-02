@@ -5,13 +5,11 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Types;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -141,7 +139,7 @@ public class lib {
     }
     
     public static String changeDateFormat(Date date){
-            SimpleDateFormat date_format = new SimpleDateFormat("dd-MMM-yyyy");
+            SimpleDateFormat date_format = new SimpleDateFormat("yyyy-MM-dd");
             return String.valueOf(date_format.format(date));
     }
    

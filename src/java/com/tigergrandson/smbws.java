@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 
 /**
  *
@@ -46,5 +47,31 @@ public class smbws {
         } finally {
             return SchoolYear;
         }        
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getExamList")
+    public List<Exam> getExamList(@WebParam(name = "school_year_id") String school_year_id) {
+        List<Exam> Exams = new ArrayList<Exam>();
+        try {
+            String query = com.tigergrandson.lib.ReadSelect("getExamList", school_year_id);
+            ResultSet rs = com.tigergrandson.lib.exeSelect(query);
+            while (rs.next()) {
+                Exam ex = new Exam();
+                ex.setExam_id(rs.getString("exam_id"));
+                ex.setExam_name(rs.getString("exam_name"));
+                ex.setExam_school_year_id(rs.getString("exam_school_year_id"));
+                ex.setExam_school_time_stamp(rs.getString("exam_time_stamp"));
+                Exams.add(ex);
+                ex = null;
+            }
+
+        } catch (SQLException ex) {
+            com.tigergrandson.lib.logToFile("error - " + ex.toString());
+        } finally {
+            return Exams;
+        } 
     }
 }
