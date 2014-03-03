@@ -1,14 +1,14 @@
 smb214-JAX-WS
 ==============
-I. Introduction:
+<h3>I. Introduction:</h3>
 
 C'est une petite application Java Wev Service qui a le role de répondre aux requêtes d'un site web dévloppé en PHP.
 L'exemple pris est le livret scolaire. 
 
-II. L'architecture
+<h3>II. L'architecture</h3>
 C'est une application Java qui est deployée dans un serveur Glassfish 4.0 qui à son tour est connecté à la base de données de l'école qui est installée sur un MySQL Server.
 
-III. La base de données
+<h3>III. La base de données</h3>
 La base de donnée contient tous les tables et les relations nécessaires pour un système de management d'une école. Cette base de données va être utilisé dans un projet à réaliser pour l'Ecole Sainte-Louise où je travaille.
 Les tables que nous allons utilisé dans notre exemple sont:
   1. school_year //C'est la table qui contient la liste des années scolaires
@@ -18,7 +18,7 @@ Les tables que nous allons utilisé dans notre exemple sont:
   5. student_class //C'est la table qui reli les éleves à leurs classe pour chaque année scolaire
   6. grade //C'est la table des notes pour chaque année scolaire, examen, élève et note
 
-IV. L'application
+<h3>IV. L'application</h3>
 L'application contient une ensemble de classe:
   1. La classe SchoolYear.java, c'est une classe d'implementation de l'object SchoolYear
   2. La classe Examen.java, c'est une classe d'implementation de l'object Examen
