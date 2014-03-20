@@ -16,6 +16,8 @@ Les services web de type Soap font un usage intensif de XML, des namespaces XML 
 
 Il est ainsi possible de développer des services web avec une plate-forme (par exemple Java) et d'utiliser ces services web avec une autre plate-forme (par exemple .Net ou PHP) : c'est une des grandes forces des services web même si cela reste parfois quelque peu théorique, essentiellement à cause des implémentations des moteurs utilisés pour mettre en oeuvre les services web.
 
+En Netbeans, il suffit d'ajouter un fichier Java Web Service et de créer les fonctions (on peut les faires avec un wizard) une fois compiler les fichier wsdl et xsd seront automatiquement créer. Ces fichiers seront transmis au développeur de l'application cliente.Ils servent à identifier la liste des fonctions et de leurs paramètres avec leur type.
+
 <h3>II. L'exemple</h3>
 C'est une petite application Java Wev Service qui a le role de répondre aux requêtes d'un site web dévloppé en PHP.
 L'exemple pris est le livret scolaire. 
