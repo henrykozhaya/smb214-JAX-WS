@@ -2,10 +2,23 @@ smb214-JAX-WS
 ==============
 <h3>I. Introduction:</h3>
 
+Les Services Web sont un moyen de communication qui permet une bonne fonctionnalité entre les différentes applications sur différentes plates-formes, par exemple, une application Java sur Windows peut communiquer avec un .Net basé sur un Linux. La communication peut se faire par un ensemble de messages XML via le protocole HTTP. Alors le développeur d'une application, sur le même LAN oubien sur internet, qui a besoin de nos informations, peut y accéder à travers nos fonctions de service web sans atteindre directement notre base de données.
+
+Alors les services web sont indépendants des browsers et des systèmes d'opération. 
+Le Consortium World Wide Web ( W3C ) a défini les services Web. Selon le W3C, « Les services Web sont la conception basée sur les messages fréquemment trouvés sur le Web et des logiciels d'entreprise. Le service web est basé sur des technologies telles que HTTP, XML , SOAP , WSDL , SPARQL , et d'autres".
+
+Il existe deux grandes familles de services web :
+  1. Les services web de type SOAP
+  2. Les services web de type REST
+
+Dans notre exemple, nous allons travailler les services web de type SOAP. Les services web serveur en Java (JAX-WS) et ceux du client en PHP.
+Les services web de type Soap font un usage intensif de XML, des namespaces XML et des schémas XML. Ces technologies font la force des services web pour permettre leur utilisation par des clients et des serveurs hétérogènes. XML est notamment utilisé pour stocker et organiser les informations de la requête et de la réponse mais aussi pour décrire le service web. L'utilisation de XML pour le format des messages rend les échanges indépendants du système d'exploitation, de la plate-forme et du langage.
+
+Il est ainsi possible de développer des services web avec une plate-forme (par exemple Java) et d'utiliser ces services web avec une autre plate-forme (par exemple .Net ou PHP) : c'est une des grandes forces des services web même si cela reste parfois quelque peu théorique, essentiellement à cause des implémentations des moteurs utilisés pour mettre en oeuvre les services web.
+
+<h3>II. L'exemple</h3>
 C'est une petite application Java Wev Service qui a le role de répondre aux requêtes d'un site web dévloppé en PHP.
 L'exemple pris est le livret scolaire. 
-
-<h3>II. L'architecture</h3>
 C'est une application Java qui est deployée dans un serveur Glassfish 4.0 qui à son tour est connecté à la base de données de l'école qui est installée sur un MySQL Server.
 
 <h3>III. La base de données</h3>
