@@ -1,0 +1,1 @@
+SELECT * FROM `smb`.`school_year`
